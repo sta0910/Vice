@@ -1,28 +1,32 @@
-const tweetForm = document.querySelector('#tweetForm');
-const tweetContainer = document.querySelector('#tweets')
-tweetForm.addEventListener('submit', function(e) {
-        e.preventDefault();
+document.querySelector('button').addEventListener('click', function(evt) {
+    console.log(evt)
+})
 
+/* const input = document.querySelector('input');
+input.addEventListener('keydown', function(e) {
+    console.log(`key: ${e.key}`)
+    console.log(`code: ${e.code}`)
+}) */
 
-        /* const usernameInput = document.querySelectorAll('input')[0];
-        const tweetInput = document.querySelectorAll('input')[1]; */
-        const usernameInput = tweetForm.elements.username;
-        const tweetInput = tweetForm.elements.tweet;
-        addTweet(usernameInput.value, tweetInput.value);
+/* input.addEventListener('keyup', function() {
+    console.log('keyup')
+}) */
 
-        usernameInput.value = '';
-        tweetInput.value = '';
-
-        console.log(newTweet);
-        /* console.log('Helo'); */
-    })
-
-    const addTweet = (username, tweet) => {
-        const newTweet = document.createElement('li');
-        const bTag = document.createElement('b');
-        bTag.append(username);
-        newTweet.append(bTag);
-        newTweet.append(` - ${tweet}`)
-
-        tweetContainer.append(newTweet);
+window.addEventListener('keydown', function(e) {
+    switch(e.code) {
+        case 'ArrowUp':
+            console.log('↑');
+            break;
+        case 'ArrowDown':
+            console.log('→');
+            break;
+        case 'ArrowLeft':
+            console.log('↓');
+            break;
+        case 'ArrowRight':
+            console.log('←');
+            break;
+        default:
+            console.log('無効なキー')
     }
+})
