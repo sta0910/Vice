@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卓球得点</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+</head>
+
+<body>
+    <section class="section">
+    <div class="container">
+  <div class="columns">
+    <div class="column is-half is-offset-one-quarter">
+              <div class="card">
+                <div class="card-image">
+                    <figure class="image is-2by1"></figure>
+                    <img src="https://i.ytimg.com/vi/EVPRguvGrzg/maxresdefault.jpg" alt="">
+                </div>
+  <header class="card-header">
+    <p class="card-header-title">卓球得点表</p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+        <h1 class="title is-1"><span id="p1Display">0</span> 対 <span id="p2Display">0</span></h1>
+      <p class="subtitle">
+        下のボタンを押して得点を管理しよう
+      </p>
+      
+      <label for="winScore" class="label is-large is-inline">得点を設定してください</label>
+      <div class="select is-rounded">
+        <select name="" id="winScore">
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+    </select>
+      </div>
+        <a href="#"></a><a href="#"></a> <a href="#"></a>
+      <br />
+      <time datetime="2016-1-1"></time>
+    </div>
+  </div>
+  <footer class="card-footer">
+    <button id="p1Button" class="is-primary button card-footer-item">+1 プレイヤー1</button>
+    <button id="p2Button" class="is-danger button card-footer-item">+2 プレイヤー2</button>
+    <button id="reSet" class="is-info button card-footer-item">リセット</button>
+  </footer>
+</section>
+    <script src="app.js"></script>
+</body>
+</html>
