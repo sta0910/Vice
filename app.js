@@ -1,32 +1,26 @@
-document.querySelector('button').addEventListener('click', function(evt) {
-    console.log(evt)
-})
+function hex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
 
-/* const input = document.querySelector('input');
-input.addEventListener('keydown', function(e) {
-    console.log(`key: ${e.key}`)
-    console.log(`code: ${e.code}`)
-}) */
+function rgb(r, g, b) {
+  return `rgb(${r}, ${g}, ${b})`;
+}
 
-/* input.addEventListener('keyup', function() {
-    console.log('keyup')
-}) */
+function makeColor(r, g, b) {
+  const color = {};
 
-window.addEventListener('keydown', function(e) {
-    switch(e.code) {
-        case 'ArrowUp':
-            console.log('↑');
-            break;
-        case 'ArrowDown':
-            console.log('→');
-            break;
-        case 'ArrowLeft':
-            console.log('↓');
-            break;
-        case 'ArrowRight':
-            console.log('←');
-            break;
-        default:
-            console.log('無効なキー')
-    }
-})
+  color.r = r;
+  color.g = g;
+  color.b = b;
+  color.rgb = function () {
+    const { r, g, b } = this;
+    return `rgb(${r}, ${g}, ${b})`;
+  };
+  function hex(r, g, b) {
+    const { r, g, b } = this;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+  return color;
+}
+
+const firstColor = makeColor(35, 255, 150);
